@@ -23,6 +23,12 @@ class MovieApp {
         }
     }
 
+    deleteMovieCallback(event) {
+        if (event.target.parentElement.parentElement.tagName.toLowerCase() === "li") {
+            event.target.parentElement.parentElement.remove();
+        }
+    }
+
     callApi() {
         let _this = this,
             xhr = new XMLHttpRequest();
@@ -76,13 +82,16 @@ class MovieApp {
                     dateEle = _this.createElement("span"),
                     nameEle = _this.createElement("span"),
                     actionEle = _this.createElement("button"),
+                    deleteEle = _this.createElement("button"),
                     name = _this.createTextNode(list.title),
                     relDate = _this.createTextNode(_this.formatDate(list.release_date)),
                     descrip,
                     descriptText = list.overview,
-                    addToFav = _this.createTextNode('addToFav');
+                    addToFav = _this.createTextNode('Make Favourite'),
+                    deleteMovie = _this.createTextNode('Delete');
 
-                actionEle.className = "btn btn-success";
+                actionEle.className = "btn btn-primary";
+                deleteEle.className = "btn btn-danger";
                 titleEle.className = "movie-name";
                 imgEle.className = "image";
                 detailEle.className = "details";
@@ -101,6 +110,7 @@ class MovieApp {
                 discriEle.appendChild(descrip);
                 actionEle.appendChild(addToFav);
                 actionEle.setAttribute("id", "favList_" + list.id);
+                deleteEle.appendChild(deleteMovie);
 
                 imgEle.appendChild(imgDetailEle);
                 imgDetailEle.setAttributeNode(attrSrc);
@@ -111,11 +121,14 @@ class MovieApp {
                 if (addListener) {
                     detailEle.appendChild(actionEle);
                 }
+                detailEle.appendChild(deleteEle);
 
                 liEle.appendChild(imgEle);
                 liEle.appendChild(detailEle);
 
                 listsView.appendChild(liEle);
+
+                deleteEle.addEventListener('click', _this.deleteMovieCallback);
 
                 if (addListener) {
 
