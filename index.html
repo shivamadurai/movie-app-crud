@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/movie.css">
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1>Movie Search Assignment</h1>
+    </header>
+
+    <div class="form-wrapper">
+        <form class="form-inline" id="movieSearch">
+            <div class="form-group">
+                <label for="search">Search:</label>
+                <input type="text" class="form-control search-box" id="search" placeholder="Search" name="search" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="form-group">
+                <input type="text" class="form-control filter-box" id="filter_movie" placeholder="Filter" name="filter">
+            </div>
+        </form>
+        <div class="view-fav"><a class="btn-link favMovies" href="">View Fav List</a></div>
+    </div>
+
+    <div class="result-wrapper" style="visibility: hidden;">
+        <div class="title">
+            "<span id="search-label"></span>" Results
+        </div>
+        <div class="result-list">
+            <ul class="lists"></ul>
+        </div>
+    </div>
+
+    <div class="fav-wrapper">
+        <div class="fav-list"></div>
+    </div>
+
+</div>
+<script src="./assets/movie.js"></script>
+
+</body>
+
+</html>

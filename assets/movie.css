@@ -1,0 +1,65 @@
+.header {
+    margin-bottom: 10px;
+}
+
+h2 {
+    display: inline-block;
+    margin-left: 150px;
+}
+.form-wrapper {
+    margin: 0 auto;
+    text-align: center;
+    background: #b2b2b2;
+    padding: 25px 0;
+}
+.result-wrapper {
+    background: #e2e2e2;
+    padding: 10px;
+}
+.title {
+    font-size: 20px;
+}
+ul {
+    list-style-type: none;
+}
+ul li {
+    font-size: 16px;
+    padding: 10px 0;
+    display: flex;
+    flex-flow: row wrap;
+}
+.image {
+    width: 15%;
+}
+.details {
+    width: 84%;
+}
+ul li div > div {
+   width: 100%;
+}
+.form-inline .form-control {
+    width: 400px;
+    height: 45px;
+    font-size: 20px;
+}
+.form-inline {
+    padding-bottom: 10px;
+}
+.movie-name {
+    font-weight: bold;
+}
+.movie-name span {
+        padding-left: 15px;
+        font-weight: normal;
+        font-style: italic;
+}
+.movie-name span.movie-title {
+    padding: 0;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 21px;
+}
+li div img {
+    width: 100px;
+    height: 100px;
+}
